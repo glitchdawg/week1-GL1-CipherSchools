@@ -21,7 +21,30 @@ func main() {
 	// }
 	var y func()
 	y = func() {
-		fmt.Print(9)
+		package main
+
+		import "fmt"
+		
+		func main() {
+			// number := 10
+			var number int
+			number = 10
+			fmt.Println(number)
+		
+			//store a function as a value to variable
+			var getInt func(x int) int
+			getInt = func(x int) int {
+				fmt.Println("In a 1st function")
+				return 20 + x
+			}
+			g(getInt, 8)
+			// getInt = func(x int) int {
+			// 	fmt.Println("In a 2nd function")
+			// 	return 10 + x
+			// }
+			var y func()
+			y = func() {
+				fmt.Print(9)
 	}
 	y()
 	getInt = func(x int) int {
